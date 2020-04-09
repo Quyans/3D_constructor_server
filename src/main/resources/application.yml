@@ -1,0 +1,22 @@
+
+
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 30MB
+      max-request-size: 30MB
+
+# 如果不设置大小的话就设置为 -1即可
+#multipart.maxFileSize=10Mb是设置单个文件的大小,
+# multipart.maxRequestSize=100Mb是设置单次上传文件的总文件大小
+
+
+jdbc:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/new_schema?useUnicode=true&characterEncoding=utf-8&useSSL=false
+  username: root
+  password: qys138911
+
+
