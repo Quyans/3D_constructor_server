@@ -1,14 +1,14 @@
 package com.example.springbootweb.controller;
 
+import com.example.springbootweb.mojo.JsonProduct;
+import com.example.springbootweb.mojo.TestGetBean;
 import com.example.springbootweb.mojo.Users;
 import com.example.springbootweb.service.UserService;
+import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,17 +21,17 @@ public class AddUserController {
     @Autowired
     private UserService userService;
 
-
-    @RequestMapping("/user/adduser")
+    @PostMapping("/user/adduser")
     public String addUser(Users users ){
         //把users传给业务层和持久层
+        System.out.println(users.getUsername());
         try {
             this.userService.addUser(users);
         }catch (Exception e){
             e.printStackTrace();
-            return "error";
+            return "error.html";
         }
-        return "successful";
+        return "success.html";
     }
 
     /**
@@ -58,8 +58,37 @@ public class AddUserController {
             System.out.println("...........111111111111111111...........");
             return list;
         }
-        System.out.println("this is list");
+
         return list;
+    }
+
+//    @RequestMapping(value = "/OkHttp", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    //post方法接受请求并且返回
+    // 前端发json对象的时候用RequestParam   前端发json对象的String的时候用Requestbody
+    @PostMapping("/OkHttp")
+    @ResponseBody
+    public String OkHttp(@RequestParam("name") String name,
+                         @RequestParam("sex") String sex,
+                         @RequestParam("id") String id){
+
+        System.out.println("name"+name);
+        JSONObject result = new JSONObject();
+        result.put("msg", "ok");
+        result.put("method", "json");
+//        result.put("data", jsonParam);
+        return result.toJSONString();
+    }
+
+    //测试get方法
+    //https://www.cnblogs.com/zhanglijun/p/9403483.html 讲了GetMapping获取参数的几种方式
+    @GetMapping(value = "/testGet")
+    @ResponseBody
+    public String testGet(TestGetBean testGetBean){
+        System.out.println(testGetBean.getName());
+        JSONObject result = new JSONObject();
+        result.put("msg", "ok");
+        result.put("method", "json");
+        return result.toJSONString();
     }
 
 }
