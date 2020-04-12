@@ -9,13 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-//@RestController
-//sfa
 public class AddUserController {
 
     @Autowired
@@ -52,17 +54,15 @@ public class AddUserController {
         list.add(users);
         try {
             list = this.userService.findAllUser();
-//            model.addAttribute("list",list);
         }catch (Exception e){
             e.printStackTrace();
-            System.out.println("...........111111111111111111...........");
             return list;
         }
 
         return list;
     }
 
-//    @RequestMapping(value = "/OkHttp", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    //@RequestMapping(value = "/OkHttp", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     //post方法接受请求并且返回
     // 前端发json对象的时候用RequestParam   前端发json对象的String的时候用Requestbody
     @PostMapping("/OkHttp")
@@ -89,6 +89,50 @@ public class AddUserController {
         result.put("msg", "ok");
         result.put("method", "json");
         return result.toJSONString();
+    }
+
+    /**
+     * 文件上传具体实现方法;
+     *
+     * @param request
+     * @return
+     */
+    //https://www.cnblogs.com/zhao1949/p/9681701.html  这里讲了如何接收多个文件和多个参数
+    @RequestMapping(value = "/batch/upload", method = RequestMethod.POST)
+    @ResponseBody
+    public String handleFileUpload(HttpServletRequest request) {
+        MultipartHttpServletRequest params=((MultipartHttpServletRequest) request);
+        List<MultipartFile> files = ((MultipartHttpServletRequest) request)
+                .getFiles("uploadFiles");
+//        String name=params.getParameter("name");
+//        System.out.println("name:"+name);
+//        String id=params.getParameter("id");
+//        System.out.println("id:"+id);
+        MultipartFile file = null;
+        BufferedOutputStream stream = null;
+        System.out.println("大小"+files.size());
+        for (int i = 0; i < files.size(); ++i) {
+            file = files.get(i);
+            System.out.println(file.getOriginalFilename()+"----out");
+            if (!file.isEmpty()) {
+                try {
+                    byte[] bytes = file.getBytes();
+                    stream = new BufferedOutputStream(new FileOutputStream(
+                            new File("./src/main/resources/static/uploadFiles/"+file.getOriginalFilename())));
+                    System.out.println(file.getOriginalFilename());
+                    stream.write(bytes);
+                    stream.close();
+                } catch (Exception e) {
+                    stream = null;
+                    return "You failed to upload " + i + " => "
+                            + e.getMessage();
+                }
+            } else {
+                return "You failed to upload " + i
+                        + " because the file was empty.";
+            }
+        }
+        return "upload successful";
     }
 
 }
