@@ -5,7 +5,10 @@ import com.example.springbootweb.mojo.TestGetBean;
 import com.example.springbootweb.mojo.Users;
 import com.example.springbootweb.service.UserService;
 import net.minidev.json.JSONObject;
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +16,10 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -133,6 +139,63 @@ public class AddUserController {
             }
         }
         return "upload successful";
+    }
+
+    /**
+     * 实现文件下载
+     */
+    @RequestMapping("/file/downloadFile")
+    private String downloadFile(HttpServletResponse response) throws IOException {
+        System.out.println("1111");
+        String downloadFilePath = "./src/main/resources/static/uploadFiles/";//被下载的文件在服务器中的路径,
+        String fileName = "100_7102.JPG";//被下载文件的名称
+        String fileUrl = downloadFilePath+fileName;
+        File file = new File(fileUrl);
+        if (file.exists()) {
+            response.setContentType("application/force-download");// 设置强制下载不打开            
+            response.addHeader("Content-Disposition", "attachment;fileName=" + fileName);
+            byte[] buffer = new byte[1024];
+            FileInputStream fis = null;
+            BufferedInputStream bis = null;
+            OutputStream outputStream = null;
+            try {
+                fis = new FileInputStream(file);
+                bis = new BufferedInputStream(fis);
+                outputStream = response.getOutputStream();
+                int i = bis.read(buffer);
+                while (i != -1) {
+                    outputStream.write(buffer, 0, i);
+                    i = bis.read(buffer);
+                }
+                return "下载成功";
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+
+                if (bis != null) {
+                    try {
+                        bis.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (fis != null) {
+                    try {
+                        fis.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (outputStream != null){
+                    try {
+                        outputStream.flush();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+        return "下载失败";
     }
 
 }
