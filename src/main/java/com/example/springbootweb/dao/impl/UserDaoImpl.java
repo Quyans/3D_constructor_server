@@ -21,6 +21,7 @@ public class UserDaoImpl implements UserDao {
     private JdbcTemplate jdbcTemplate;
 
 
+
     /**
      * 添加用户
      * @param users
@@ -28,8 +29,8 @@ public class UserDaoImpl implements UserDao {
     @Override
 
     public void insertUsers(Users users) {
-        String sql = "insert into User(name,sex) values(?,?)";
-        this.jdbcTemplate.update(sql,users.getUsername(),users.getUsersex());
+        String sql = "insert into User(phone,nickname,password) values(?,?,?)";
+        this.jdbcTemplate.update(sql,users.getPhone(),users.getNickname(),users.getPassword());
     }
 
     @Override
@@ -47,14 +48,29 @@ public class UserDaoImpl implements UserDao {
             public Users mapRow(ResultSet rs, int rowNum) throws SQLException {
 
                 Users users = new Users();
-                users.setUsername(rs.getString("name"));
-                users.setUsersex(rs.getInt("sex"));
+                users.setPhone(rs.getString("phone"));
+                users.setNickname(rs.getString("nickname"));
 
 
                 return users;
             }
         });
+    }
 
+    @Override
+    public Users getUserInfo(Users users) {
+        String sql = "select * from User where phone = " + users.getPhone()  ;
 
+        //queryForObject 返回单个对象
+        //https://www.cnblogs.com/gongxr/p/8053010.html 这篇文章讲的很好
+        return this.jdbcTemplate.queryForObject(sql, new RowMapper<Users>() {
+            @Override
+            public Users mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Users user = new Users();
+                user.setPhone(rs.getString("phone"));
+                user.setNickname(rs.getString("nickname"));
+                return user;
+            }
+        });
     }
 }

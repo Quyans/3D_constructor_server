@@ -1,14 +1,13 @@
 package com.example.springbootweb.controller;
 
-import com.example.springbootweb.mojo.JsonProduct;
+import com.example.springbootweb.config.IntentKey;
 import com.example.springbootweb.mojo.TestGetBean;
 import com.example.springbootweb.mojo.Users;
 import com.example.springbootweb.service.UserService;
+import com.example.springbootweb.util.Command;
+import com.example.springbootweb.util.Util_function;
 import net.minidev.json.JSONObject;
-import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,10 +17,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class AddUserController {
@@ -197,5 +195,108 @@ public class AddUserController {
         }
         return "下载失败";
     }
+
+    @RequestMapping("/testCommand")
+    public String testCommand(){
+//        String commandStr = "ping www.baidu.com";
+        List<String> commandStr = new ArrayList<String>();
+//        commandStr = {};
+        commandStr.add("ping");
+        commandStr.add("www.baidu.com");
+        Command.exeCmd(commandStr);
+        return "null";
+    }
+
+    @GetMapping("/user/test")
+    @ResponseBody
+    public JSONObject returnjson(Model model){
+
+        //把users传给业务层和持久层
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.appendField("data","ok");
+        jsonObject.appendField("msg","suc");
+//        Json json  = new Json(200,"ok",jsonObject);
+
+        return Util_function.setHttpHeader(200,"ok",jsonObject);
+    }
+
+    @RequestMapping("/testcmd")
+    public String testcmd() throws IOException, InterruptedException {
+
+        //下面这个方法是暂时可行的
+//        String shpath="python /home/qys/Documents/graduate_code/testMVS/abc.py";   //程序路径
+//        ProcessBuilder processBuilder = new ProcessBuilder();
+//
+//        List commands = new java.util.ArrayList<String>();
+//        commands.add("python");
+//        commands.add("/home/qys/Documents/graduate_code/testMVS/MvgMvsPipeline.py");
+////        commands.add("/home/qys/Documents/graduate_code/testMVS/abc.py");
+//        processBuilder.command(commands);
+//        Map workerEnv = processBuilder.environment();
+//        workerEnv.put("python", "/usr/lib/python3.6");
+//
+//
+//        int runningStatus = 0;
+//        String s = null;
+//        try {
+//            Process p = processBuilder.start();
+//            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+//            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+//            while ((s = stdInput.readLine()) != null) {
+//                System.err.println(s);
+//            }
+//            while ((s = stdError.readLine()) != null) {
+//                System.err.println(s);
+//            }
+//            try {
+//                runningStatus = p.waitFor();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        if (runningStatus != 0) {
+//            System.out.println("执行失败，code:"+runningStatus);
+//        }
+
+
+        String executer = "python";
+        // python绝对路径
+        String file_path = "/home/qys/Documents/graduate_code/testMVS/MvgMvsPipeline.py";
+        String inputUrl = "/home/qys/Documents/graduate_code/Code/3D_constructor_server/src/main/resources/static/api/models/18560125097/photo";
+        String outputUrl = "/home/qys/Documents/graduate_code/Code/3D_constructor_server/src/main/resources/static/api/models/18560125097/model";
+
+        String[] command_line = new String[] {executer, file_path, inputUrl, outputUrl};
+        try {
+            Process process = Runtime.getRuntime().exec(command_line);
+            BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream(),"UTF-8"));
+            BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            String line;
+            while ((line = in.readLine()) != null) {
+                System.out.println(line);
+            }
+            while ((line = stdError.readLine()) != null) {
+                System.err.println(line);
+            }
+
+            in.close();
+            // java代码中的 process.waitFor() 返回值（和我们通常意义上见到的0与1定义正好相反）
+            // 返回值为0 - 表示调用python脚本成功；
+            // 返回值为1 - 表示调用python脚本失败。
+            int re = process.waitFor();
+            System.out.println("调用 python 脚本是否成功：" + re);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } catch (InterruptedException e2) {
+            e2.printStackTrace();
+        }
+
+
+
+        return "ok";
+    }
+
 
 }

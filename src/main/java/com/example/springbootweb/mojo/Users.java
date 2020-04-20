@@ -1,31 +1,33 @@
 package com.example.springbootweb.mojo;
 
+import javax.swing.*;
+
 public class Users {
-    private String userid;
-    private String username;
-    private int usersex;
+    private String phone;
+    private String nickname;
+    private String password;
 
-    public String getUserid() {
-        return userid;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getUsername() {
-        return username;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public int getUsersex() {
-        return usersex;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUsersex(int usersex) {
-        this.usersex = usersex;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

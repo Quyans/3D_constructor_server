@@ -9,5 +9,5 @@ public interface UserDao {
     //在这里操作数据库
     void insertUsers(Users users);
     List<Users> findAllUser();
-
+    Users getUserInfo(Users users);
 }

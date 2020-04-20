@@ -8,4 +8,6 @@ public interface UserService {
     public void addUser(Users users);
 
     public List<Users> findAllUser();
+
+    public Users getUserInfo(Users users);
 }

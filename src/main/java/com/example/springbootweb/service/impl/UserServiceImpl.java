@@ -35,4 +35,10 @@ public class UserServiceImpl implements UserService {
 
         return this.userDao.findAllUser();
     }
+
+    @Override
+    public Users getUserInfo(Users users) {
+
+        return this.userDao.getUserInfo(users);
+    }
 }

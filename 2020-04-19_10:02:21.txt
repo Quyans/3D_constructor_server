@@ -1,0 +1,10 @@
+写到刚刚创建的文件里面去咯~~~文件名是:2020-04-19_10:02:21
+写到刚刚创建的文件里面去咯~~~文件名是:2020-04-19_10:02:21
+写到刚刚创建的文件里面去咯~~~文件名是:2020-04-19_10:02:21
+写到刚刚创建的文件里面去咯~~~文件名是:2020-04-19_10:02:21
+写到刚刚创建的文件里面去咯~~~文件名是:2020-04-19_10:02:21
+当前脚本的路径写入到文件中去:/home/qys/Documents/graduate_code/Code/3D_constructor_server
+当前脚本的路径写入到文件中去:/home/qys/Documents/graduate_code/Code/3D_constructor_server
+当前脚本的路径写入到文件中去:/home/qys/Documents/graduate_code/Code/3D_constructor_server
+当前脚本的路径写入到文件中去:/home/qys/Documents/graduate_code/Code/3D_constructor_server
+当前脚本的路径写入到文件中去:/home/qys/Documents/graduate_code/Code/3D_constructor_server
