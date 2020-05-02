@@ -10,4 +10,6 @@ public interface UserDao {
     void insertUsers(Users users);
     List<Users> findAllUser();
     Users getUserInfo(Users users);
+
+    Users  login(Users users);
 }

@@ -51,12 +51,30 @@ public class ModelDaoImpl implements ModelDao {
     @Override
     public void newModel(Models models) {
         System.out.println("Dao!!  ------------这里是Dao层");
-        String sql = "insert into Model(id_model,phone,model_name,create_time) values(?,?,?,?)";
+        String sql = "insert into Model(id_model,phone,model_name,create_time,ownerName,logoUrl) values(?,?,?,?,?,?)";
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 //        System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
         String time = df.format(new Date()).toString();
-        this.jdbcTemplate.update(sql,models.getID(),models.getPhone(),models.getName(),time);
+        this.jdbcTemplate.update(sql,models.getID(),models.getPhone(),models.getName(),time,models.getOwnerName(),models.getLogo());
 //        this.jdbcTemplate.update(sql,models.getID(),models.getPhone(),"曲岩松",time);
+    }
+
+    @Override
+    public List<Models> getAllModel(String phone) {
+        String sql = "select * from Model where phone = ?";
+        return this.jdbcTemplate.query(sql, new RowMapper<Models>() {
+            @Override
+            public Models mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Models models = new Models();
+                models.setName(rs.getString("model_name"));
+                models.setID(rs.getString("id_model"));
+                models.setLogo(rs.getString("logoUrl"));
+                models.setPhone(rs.getString("phone"));
+                models.setOwnerName(rs.getString("ownerName"));
+                models.setTime(rs.getString("create_time"));
+                return models;
+            }
+        },phone);
     }
 
 }

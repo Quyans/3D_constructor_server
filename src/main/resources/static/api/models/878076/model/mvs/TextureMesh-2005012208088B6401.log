@@ -1,0 +1,22 @@
+22:08:08 [App     ] Build date: Feb 26 2020, 23:32:00
+22:08:08 [App     ] CPU: Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz (4 cores)
+22:08:08 [App     ] RAM: 15.56GB Physical Memory 7.81GB Virtual Memory
+22:08:08 [App     ] OS: Linux 4.15.0-96-generic (x86_64)
+22:08:08 [App     ] SSE & AVX compatible CPU & OS detected
+22:08:08 [App     ] Command line: scene_dense_mesh_refine.mvs --decimate 0.5 -w /home/qys/Documents/graduate_code/Code/3D_constructor_server/src/main/resources/static/api/models/878076/model/mvs
+22:08:08 [App     ] Scene loaded (98ms):
+	11 images (11 calibrated) with a total of 63.22 MPixels (5.75 MPixels/image)
+	0 points, 80555 vertices, 160456 faces
+22:08:09 [App     ] Cleaned mesh: 40353 vertices, 80235 faces (1s23ms)
+22:08:09 [App     ] Cleaned mesh: 40353 vertices, 80235 faces (116ms)
+22:08:17 [App     ] Assigning the best view to each face completed: 80235 faces (7s327ms)
+22:08:21 [App     ] Generating texture atlas and image completed: 408 patches, 4096 image size (4s32ms)
+22:08:21 [App     ] Mesh texturing completed: 40353 vertices, 80235 faces (11s454ms)
+22:08:24 [App     ] Scene saved (3s662ms):
+	11 images (11 calibrated)
+	0 points, 40353 vertices, 80235 faces
+22:08:29 [App     ] Mesh saved: 40353 vertices, 80235 faces (4s62ms)
+22:08:29 [App     ] MEMORYINFO: {
+22:08:29 [App     ] 	VmPeak:	 1892068 kB
+22:08:29 [App     ] 	VmSize:	  957924 kB
+22:08:29 [App     ] } ENDINFO

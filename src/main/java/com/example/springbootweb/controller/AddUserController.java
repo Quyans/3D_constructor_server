@@ -30,7 +30,7 @@ public class AddUserController {
     @PostMapping("/user/adduser")
     public String addUser(Users users ){
         //把users传给业务层和持久层
-        System.out.println(users.getUsername());
+//        System.out.println(users.getUsername());
         try {
             this.userService.addUser(users);
         }catch (Exception e){
@@ -49,13 +49,6 @@ public class AddUserController {
 
         //把users传给业务层和持久层
         List<Users> list = new ArrayList<Users>();
-        Users users = new Users();
-        users.setUsername("name10");
-        users.setUsersex(1);
-        list.add(users);
-        users.setUsername("name11");
-        users.setUsersex(2);
-        list.add(users);
         try {
             list = this.userService.findAllUser();
         }catch (Exception e){
@@ -223,44 +216,6 @@ public class AddUserController {
     @RequestMapping("/testcmd")
     public String testcmd() throws IOException, InterruptedException {
 
-        //下面这个方法是暂时可行的
-//        String shpath="python /home/qys/Documents/graduate_code/testMVS/abc.py";   //程序路径
-//        ProcessBuilder processBuilder = new ProcessBuilder();
-//
-//        List commands = new java.util.ArrayList<String>();
-//        commands.add("python");
-//        commands.add("/home/qys/Documents/graduate_code/testMVS/MvgMvsPipeline.py");
-////        commands.add("/home/qys/Documents/graduate_code/testMVS/abc.py");
-//        processBuilder.command(commands);
-//        Map workerEnv = processBuilder.environment();
-//        workerEnv.put("python", "/usr/lib/python3.6");
-//
-//
-//        int runningStatus = 0;
-//        String s = null;
-//        try {
-//            Process p = processBuilder.start();
-//            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
-//            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-//            while ((s = stdInput.readLine()) != null) {
-//                System.err.println(s);
-//            }
-//            while ((s = stdError.readLine()) != null) {
-//                System.err.println(s);
-//            }
-//            try {
-//                runningStatus = p.waitFor();
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        if (runningStatus != 0) {
-//            System.out.println("执行失败，code:"+runningStatus);
-//        }
-
 
         String executer = "python";
         // python绝对路径
@@ -292,9 +247,6 @@ public class AddUserController {
         } catch (InterruptedException e2) {
             e2.printStackTrace();
         }
-
-
-
         return "ok";
     }
 

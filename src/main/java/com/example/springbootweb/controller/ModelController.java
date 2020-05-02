@@ -2,26 +2,27 @@ package com.example.springbootweb.controller;
 
 
 import com.example.springbootweb.config.IntentKey;
+
 import com.example.springbootweb.mojo.Models;
+import com.example.springbootweb.mojo.TestGetBean;
 import com.example.springbootweb.service.ModelService;
 import com.example.springbootweb.service.impl.ModelServiceImpl;
 import com.example.springbootweb.util.Command;
 import com.example.springbootweb.util.Util_function;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import net.minidev.json.JSONObject;
 import org.python.antlr.ast.Str;
 import org.python.antlr.op.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,7 +49,7 @@ public class ModelController {
                 .getFiles("uploadFiles");
         //获取模型名称
         String name=params.getParameter("name");
-        System.out.println("name:"+name);
+
 //        String id=params.getParameter("id");
 //        System.out.println("id:"+id);
         MultipartFile file = null;
@@ -63,6 +64,7 @@ public class ModelController {
         File photoDir = new File(photoPath);
         File modelDir = new File(modelPath);
 
+
         if (!rootDir.exists()) {
             rootDir.mkdirs();
             photoDir.mkdirs();
@@ -70,6 +72,7 @@ public class ModelController {
         }
 
         System.out.println("大小"+files.size());
+
         for (int i = 0; i < files.size(); ++i) {
             file = files.get(i);
             System.out.println(file.getOriginalFilename()+"----out");
@@ -92,14 +95,16 @@ public class ModelController {
             }
         }
 
+        String logoUrl = IntentKey.baseIP + "/picture/"+modelID+"/photo/" + files.get(0).getOriginalFilename();
 
         System.out.println(modelID);
         model.setID(modelID);
         model.setName(name);
         model.setPhone(phone);
         model.setOwnerName(ownerName);
-
-        //进入创建模型
+        model.setLogo(logoUrl);
+        //进入创建模型 创建模型采用多线程
+       
         try {
             this.modelService.newModel(model);
         }catch (Exception e){
@@ -107,18 +112,40 @@ public class ModelController {
             return Util_function.setHttpHeader(200,e.toString(),jsonObject);
         }
 
+//
 
         jsonObject.appendField("id","134561");
         jsonObject.appendField("name","卢浮宫");
 
+        System.out.println("mainThread");
+        System.out.println("mainThread");
+
         return Util_function.setHttpHeader(200,"ok",jsonObject);
-
-
-
-
-
-
     }
+
+
+    @GetMapping(IntentKey.AllModel_api)
+    @ResponseBody
+    public JSONObject allModelInfo(String phone){
+        List<Models> list;
+
+        System.out.println("phone" + phone);
+        list = this.modelService.getAllModel(phone);
+
+        List<JSONObject> data = new ArrayList<JSONObject>();
+        for (int i=0; i<list.size();i++){
+            Models models = list.get(i);
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.appendField("id",models.getID());
+            jsonObject.appendField("owner",models.getOwnerName());
+            jsonObject.appendField("name",models.getName());
+            jsonObject.appendField("buildTime",models.getTime());
+            jsonObject.appendField("profile",models.getLogo());
+            data.add(jsonObject);
+        }
+        return Util_function.setHttpHeader(200,"OK",data);
+    }
+
 
     /**
      * 随机生成一个六位ID号 作为新模型的ID

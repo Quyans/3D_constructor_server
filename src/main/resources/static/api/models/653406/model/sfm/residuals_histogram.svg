@@ -1,0 +1,111 @@
+<?xml version="1.0" standalone="yes"?>
+<!-- SVG graphic -->
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
+ version="1.1">
+<rect x="0" y="-1.52588e-05" width="6" height="200" stroke="black" stroke-width="1" fill="blue"><title>(0,9855)</title></rect>
+<rect x="6" y="93.5769" width="6" height="106.423" stroke="black" stroke-width="1" fill="blue"><title>(0.039072,5244)</title></rect>
+<rect x="12" y="116.509" width="6" height="83.4906" stroke="black" stroke-width="1" fill="blue"><title>(0.0781439,4114)</title></rect>
+<rect x="18" y="128.463" width="6" height="71.5373" stroke="black" stroke-width="1" fill="blue"><title>(0.117216,3525)</title></rect>
+<rect x="24" y="139.604" width="6" height="60.3957" stroke="black" stroke-width="1" fill="blue"><title>(0.156288,2976)</title></rect>
+<rect x="30" y="147.925" width="6" height="52.0751" stroke="black" stroke-width="1" fill="blue"><title>(0.19536,2566)</title></rect>
+<rect x="36" y="155.474" width="6" height="44.5256" stroke="black" stroke-width="1" fill="blue"><title>(0.234432,2194)</title></rect>
+<rect x="42" y="161.522" width="6" height="38.4779" stroke="black" stroke-width="1" fill="blue"><title>(0.273504,1896)</title></rect>
+<rect x="48" y="168.869" width="6" height="31.1314" stroke="black" stroke-width="1" fill="blue"><title>(0.312576,1534)</title></rect>
+<rect x="54" y="173.475" width="6" height="26.5246" stroke="black" stroke-width="1" fill="blue"><title>(0.351648,1307)</title></rect>
+<rect x="60" y="176.154" width="6" height="23.8458" stroke="black" stroke-width="1" fill="blue"><title>(0.39072,1175)</title></rect>
+<rect x="66" y="181.208" width="6" height="18.7925" stroke="black" stroke-width="1" fill="blue"><title>(0.429792,926)</title></rect>
+<rect x="72" y="183.014" width="6" height="16.9863" stroke="black" stroke-width="1" fill="blue"><title>(0.468864,837)</title></rect>
+<rect x="78" y="185.672" width="6" height="14.3278" stroke="black" stroke-width="1" fill="blue"><title>(0.507935,706)</title></rect>
+<rect x="84" y="187.905" width="6" height="12.0954" stroke="black" stroke-width="1" fill="blue"><title>(0.547007,596)</title></rect>
+<rect x="90" y="189.508" width="6" height="10.4921" stroke="black" stroke-width="1" fill="blue"><title>(0.586079,517)</title></rect>
+<rect x="96" y="190.786" width="6" height="9.2136" stroke="black" stroke-width="1" fill="blue"><title>(0.625151,454)</title></rect>
+<rect x="102" y="192.349" width="6" height="7.65094" stroke="black" stroke-width="1" fill="blue"><title>(0.664223,377)</title></rect>
+<rect x="108" y="192.41" width="6" height="7.59006" stroke="black" stroke-width="1" fill="blue"><title>(0.703295,374)</title></rect>
+<rect x="114" y="193.79" width="6" height="6.21005" stroke="black" stroke-width="1" fill="blue"><title>(0.742367,306)</title></rect>
+<rect x="120" y="195.15" width="6" height="4.85033" stroke="black" stroke-width="1" fill="blue"><title>(0.781439,239)</title></rect>
+<rect x="126" y="195.089" width="6" height="4.91121" stroke="black" stroke-width="1" fill="blue"><title>(0.820511,242)</title></rect>
+<rect x="132" y="195.474" width="6" height="4.52562" stroke="black" stroke-width="1" fill="blue"><title>(0.859583,223)</title></rect>
+<rect x="138" y="195.819" width="6" height="4.18062" stroke="black" stroke-width="1" fill="blue"><title>(0.898655,206)</title></rect>
+<rect x="144" y="196.53" width="6" height="3.47032" stroke="black" stroke-width="1" fill="blue"><title>(0.937727,171)</title></rect>
+<rect x="150" y="196.469" width="6" height="3.5312" stroke="black" stroke-width="1" fill="blue"><title>(0.976799,174)</title></rect>
+<rect x="156" y="197.139" width="6" height="2.86149" stroke="black" stroke-width="1" fill="blue"><title>(1.01587,141)</title></rect>
+<rect x="162" y="197.666" width="6" height="2.33384" stroke="black" stroke-width="1" fill="blue"><title>(1.05494,115)</title></rect>
+<rect x="168" y="197.159" width="6" height="2.8412" stroke="black" stroke-width="1" fill="blue"><title>(1.09401,140)</title></rect>
+<rect x="174" y="197.95" width="6" height="2.04972" stroke="black" stroke-width="1" fill="blue"><title>(1.13309,101)</title></rect>
+<rect x="180" y="197.93" width="6" height="2.07002" stroke="black" stroke-width="1" fill="blue"><title>(1.17216,102)</title></rect>
+<rect x="186" y="198.356" width="6" height="1.64384" stroke="black" stroke-width="1" fill="blue"><title>(1.21123,81)</title></rect>
+<rect x="192" y="198.255" width="6" height="1.74531" stroke="black" stroke-width="1" fill="blue"><title>(1.2503,86)</title></rect>
+<rect x="198" y="198.498" width="6" height="1.50178" stroke="black" stroke-width="1" fill="blue"><title>(1.28937,74)</title></rect>
+<rect x="204" y="198.62" width="6" height="1.38001" stroke="black" stroke-width="1" fill="blue"><title>(1.32845,68)</title></rect>
+<rect x="210" y="199.046" width="6" height="0.953831" stroke="black" stroke-width="1" fill="blue"><title>(1.36752,47)</title></rect>
+<rect x="216" y="199.066" width="6" height="0.933536" stroke="black" stroke-width="1" fill="blue"><title>(1.40659,46)</title></rect>
+<rect x="222" y="199.188" width="6" height="0.811771" stroke="black" stroke-width="1" fill="blue"><title>(1.44566,40)</title></rect>
+<rect x="228" y="198.965" width="6" height="1.03501" stroke="black" stroke-width="1" fill="blue"><title>(1.48473,51)</title></rect>
+<rect x="234" y="198.965" width="6" height="1.03501" stroke="black" stroke-width="1" fill="blue"><title>(1.52381,51)</title></rect>
+<rect x="240" y="199.188" width="6" height="0.811771" stroke="black" stroke-width="1" fill="blue"><title>(1.56288,40)</title></rect>
+<rect x="246" y="199.33" width="6" height="0.669711" stroke="black" stroke-width="1" fill="blue"><title>(1.60195,33)</title></rect>
+<rect x="252" y="199.472" width="6" height="0.527651" stroke="black" stroke-width="1" fill="blue"><title>(1.64102,26)</title></rect>
+<rect x="258" y="199.168" width="6" height="0.832065" stroke="black" stroke-width="1" fill="blue"><title>(1.68009,41)</title></rect>
+<rect x="264" y="199.29" width="6" height="0.710299" stroke="black" stroke-width="1" fill="blue"><title>(1.71917,35)</title></rect>
+<rect x="270" y="199.209" width="6" height="0.791476" stroke="black" stroke-width="1" fill="blue"><title>(1.75824,39)</title></rect>
+<rect x="276" y="199.371" width="6" height="0.629122" stroke="black" stroke-width="1" fill="blue"><title>(1.79731,31)</title></rect>
+<rect x="282" y="199.655" width="6" height="0.345003" stroke="black" stroke-width="1" fill="blue"><title>(1.83638,17)</title></rect>
+<rect x="288" y="199.594" width="6" height="0.405885" stroke="black" stroke-width="1" fill="blue"><title>(1.87545,20)</title></rect>
+<rect x="294" y="199.716" width="6" height="0.28412" stroke="black" stroke-width="1" fill="blue"><title>(1.91453,14)</title></rect>
+<rect x="300" y="199.614" width="6" height="0.385591" stroke="black" stroke-width="1" fill="blue"><title>(1.9536,19)</title></rect>
+<rect x="306" y="199.756" width="6" height="0.243531" stroke="black" stroke-width="1" fill="blue"><title>(1.99267,12)</title></rect>
+<rect x="312" y="199.777" width="6" height="0.223237" stroke="black" stroke-width="1" fill="blue"><title>(2.03174,11)</title></rect>
+<rect x="318" y="199.716" width="6" height="0.28412" stroke="black" stroke-width="1" fill="blue"><title>(2.07081,14)</title></rect>
+<rect x="324" y="199.675" width="6" height="0.324708" stroke="black" stroke-width="1" fill="blue"><title>(2.10989,16)</title></rect>
+<rect x="330" y="199.817" width="6" height="0.182648" stroke="black" stroke-width="1" fill="blue"><title>(2.14896,9)</title></rect>
+<rect x="336" y="199.797" width="6" height="0.202943" stroke="black" stroke-width="1" fill="blue"><title>(2.18803,10)</title></rect>
+<rect x="342" y="199.777" width="6" height="0.223237" stroke="black" stroke-width="1" fill="blue"><title>(2.2271,11)</title></rect>
+<rect x="348" y="199.696" width="6" height="0.304414" stroke="black" stroke-width="1" fill="blue"><title>(2.26617,15)</title></rect>
+<rect x="354" y="199.756" width="6" height="0.243531" stroke="black" stroke-width="1" fill="blue"><title>(2.30525,12)</title></rect>
+<rect x="360" y="199.777" width="6" height="0.223237" stroke="black" stroke-width="1" fill="blue"><title>(2.34432,11)</title></rect>
+<rect x="366" y="199.797" width="6" height="0.202943" stroke="black" stroke-width="1" fill="blue"><title>(2.38339,10)</title></rect>
+<rect x="372" y="199.858" width="6" height="0.14206" stroke="black" stroke-width="1" fill="blue"><title>(2.42246,7)</title></rect>
+<rect x="378" y="199.777" width="6" height="0.223237" stroke="black" stroke-width="1" fill="blue"><title>(2.46153,11)</title></rect>
+<rect x="384" y="199.655" width="6" height="0.345003" stroke="black" stroke-width="1" fill="blue"><title>(2.50061,17)</title></rect>
+<rect x="390" y="199.797" width="6" height="0.202943" stroke="black" stroke-width="1" fill="blue"><title>(2.53968,10)</title></rect>
+<rect x="396" y="199.899" width="6" height="0.101471" stroke="black" stroke-width="1" fill="blue"><title>(2.57875,5)</title></rect>
+<rect x="402" y="199.797" width="6" height="0.202943" stroke="black" stroke-width="1" fill="blue"><title>(2.61782,10)</title></rect>
+<rect x="408" y="199.899" width="6" height="0.101471" stroke="black" stroke-width="1" fill="blue"><title>(2.65689,5)</title></rect>
+<rect x="414" y="199.959" width="6" height="0.0405885" stroke="black" stroke-width="1" fill="blue"><title>(2.69597,2)</title></rect>
+<rect x="420" y="199.899" width="6" height="0.101471" stroke="black" stroke-width="1" fill="blue"><title>(2.73504,5)</title></rect>
+<rect x="426" y="199.939" width="6" height="0.0608828" stroke="black" stroke-width="1" fill="blue"><title>(2.77411,3)</title></rect>
+<rect x="432" y="199.777" width="6" height="0.223237" stroke="black" stroke-width="1" fill="blue"><title>(2.81318,11)</title></rect>
+<rect x="438" y="199.878" width="6" height="0.121766" stroke="black" stroke-width="1" fill="blue"><title>(2.85225,6)</title></rect>
+<rect x="444" y="199.838" width="6" height="0.162354" stroke="black" stroke-width="1" fill="blue"><title>(2.89132,8)</title></rect>
+<rect x="450" y="200" width="6" height="0" stroke="black" stroke-width="1" fill="blue"><title>(2.9304,0)</title></rect>
+<rect x="456" y="199.919" width="6" height="0.0811771" stroke="black" stroke-width="1" fill="blue"><title>(2.96947,4)</title></rect>
+<rect x="462" y="199.939" width="6" height="0.0608828" stroke="black" stroke-width="1" fill="blue"><title>(3.00854,3)</title></rect>
+<rect x="468" y="199.919" width="6" height="0.0811771" stroke="black" stroke-width="1" fill="blue"><title>(3.04761,4)</title></rect>
+<rect x="474" y="199.939" width="6" height="0.0608828" stroke="black" stroke-width="1" fill="blue"><title>(3.08668,3)</title></rect>
+<rect x="480" y="199.919" width="6" height="0.0811771" stroke="black" stroke-width="1" fill="blue"><title>(3.12576,4)</title></rect>
+<rect x="486" y="200" width="6" height="0" stroke="black" stroke-width="1" fill="blue"><title>(3.16483,0)</title></rect>
+<rect x="492" y="199.899" width="6" height="0.101471" stroke="black" stroke-width="1" fill="blue"><title>(3.2039,5)</title></rect>
+<rect x="498" y="199.939" width="6" height="0.0608828" stroke="black" stroke-width="1" fill="blue"><title>(3.24297,3)</title></rect>
+<rect x="504" y="199.98" width="6" height="0.0202943" stroke="black" stroke-width="1" fill="blue"><title>(3.28204,1)</title></rect>
+<rect x="510" y="199.838" width="6" height="0.162354" stroke="black" stroke-width="1" fill="blue"><title>(3.32112,8)</title></rect>
+<rect x="516" y="199.98" width="6" height="0.0202943" stroke="black" stroke-width="1" fill="blue"><title>(3.36019,1)</title></rect>
+<rect x="522" y="199.98" width="6" height="0.0202943" stroke="black" stroke-width="1" fill="blue"><title>(3.39926,1)</title></rect>
+<rect x="528" y="199.959" width="6" height="0.0405885" stroke="black" stroke-width="1" fill="blue"><title>(3.43833,2)</title></rect>
+<rect x="534" y="199.959" width="6" height="0.0405885" stroke="black" stroke-width="1" fill="blue"><title>(3.4774,2)</title></rect>
+<rect x="540" y="199.919" width="6" height="0.0811771" stroke="black" stroke-width="1" fill="blue"><title>(3.51648,4)</title></rect>
+<rect x="546" y="199.98" width="6" height="0.0202943" stroke="black" stroke-width="1" fill="blue"><title>(3.55555,1)</title></rect>
+<rect x="552" y="199.919" width="6" height="0.0811771" stroke="black" stroke-width="1" fill="blue"><title>(3.59462,4)</title></rect>
+<rect x="558" y="199.959" width="6" height="0.0405885" stroke="black" stroke-width="1" fill="blue"><title>(3.63369,2)</title></rect>
+<rect x="564" y="200" width="6" height="0" stroke="black" stroke-width="1" fill="blue"><title>(3.67276,0)</title></rect>
+<rect x="570" y="199.98" width="6" height="0.0202943" stroke="black" stroke-width="1" fill="blue"><title>(3.71184,1)</title></rect>
+<rect x="576" y="199.98" width="6" height="0.0202943" stroke="black" stroke-width="1" fill="blue"><title>(3.75091,1)</title></rect>
+<rect x="582" y="199.959" width="6" height="0.0405885" stroke="black" stroke-width="1" fill="blue"><title>(3.78998,2)</title></rect>
+<rect x="588" y="199.959" width="6" height="0.0405885" stroke="black" stroke-width="1" fill="blue"><title>(3.82905,2)</title></rect>
+<rect x="594" y="199.959" width="6" height="0.0405885" stroke="black" stroke-width="1" fill="blue"><title>(3.86812,2)</title></rect>
+<text x="30" y="240" font-size="20" fill="black">0</text>
+<text x="600" y="240" font-size="20" fill="black">3.9072</text>
+<polyline points="0,220,600,220" stroke="black" stroke-width="1" fill="none"></polyline>
+<text x="720" y="20" font-size="20" fill="black">9855</text>
+<text x="720" y="200" font-size="20" fill="black">0</text>
+<polyline points="660,0,660,200" stroke="black" stroke-width="1" fill="none"></polyline>
+</svg>

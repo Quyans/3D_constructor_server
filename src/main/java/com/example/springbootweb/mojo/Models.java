@@ -9,6 +9,16 @@ public class Models {
     private String phone;
     private String ownerName;
     private String ID;
+    private String logo;
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public String getName() {
         return name;
@@ -40,5 +50,13 @@ public class Models {
 
     public void setID(String ID) {
         this.ID = ID;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 }

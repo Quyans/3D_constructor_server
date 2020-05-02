@@ -2,6 +2,7 @@ package com.example.springbootweb.dao.impl;
 
 import com.example.springbootweb.dao.UserDao;
 import com.example.springbootweb.mojo.Users;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -31,6 +32,7 @@ public class UserDaoImpl implements UserDao {
     public void insertUsers(Users users) {
         String sql = "insert into User(phone,nickname,password) values(?,?,?)";
         this.jdbcTemplate.update(sql,users.getPhone(),users.getNickname(),users.getPassword());
+        System.out.println("插入成功");
     }
 
     @Override
@@ -46,11 +48,9 @@ public class UserDaoImpl implements UserDao {
              */
             @Override
             public Users mapRow(ResultSet rs, int rowNum) throws SQLException {
-
                 Users users = new Users();
                 users.setPhone(rs.getString("phone"));
                 users.setNickname(rs.getString("nickname"));
-
 
                 return users;
             }
@@ -72,5 +72,36 @@ public class UserDaoImpl implements UserDao {
                 return user;
             }
         });
+    }
+
+    //占位符在最后加！
+    @Override
+    public Users login(Users users) {
+
+        String sql = "select * from User where phone = ? and password = ?";
+        List<Users> usersList  = this.jdbcTemplate.query(sql,new RowMapper<Users>() {
+
+            @Override
+            public Users mapRow(ResultSet rs, int rowNum) throws SQLException {
+                //https://blog.csdn.net/qq_28080659/article/details/53363752
+                //这篇文章讲了如何获取读到的数据数目
+                rs.last();
+                int rowCount = rs.getRow();
+//
+//                System.out.println("rs大小"+ rowCount);
+                if (rowCount==1){
+                    Users users1 = new Users();
+                    users1.setPhone(rs.getString("phone"));
+                    users.setNickname(rs.getString("nickname"));
+                    return users;
+                }
+                return null;
+            }
+        },users.getPhone(),users.getPassword());
+
+        if (usersList.size()==1){
+            return usersList.get(0);
+        }
+        return null;
     }
 }

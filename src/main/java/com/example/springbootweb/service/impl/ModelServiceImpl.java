@@ -7,6 +7,7 @@ import com.example.springbootweb.mojo.Models;
 import com.example.springbootweb.service.ModelService;
 import com.example.springbootweb.util.Command;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,6 +34,7 @@ public class ModelServiceImpl implements ModelService {
      */
     @Override
     @Transactional   //事物 注解
+    @Async
     public void newModel(Models models) throws IOException, InterruptedException {
 
         //模型ID
@@ -56,10 +58,10 @@ public class ModelServiceImpl implements ModelService {
         shell.add(outputUrl);
 //        System.out.println(shell);
         Command.exeCmd(shell);
+    }
 
-
-
-
-
+    @Override
+    public List<Models> getAllModel(String phone) {
+        return this.modelDao.getAllModel(phone);
     }
 }

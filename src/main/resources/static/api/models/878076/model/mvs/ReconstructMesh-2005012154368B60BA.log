@@ -1,0 +1,24 @@
+21:54:36 [App     ] Build date: Feb 26 2020, 23:32:00
+21:54:36 [App     ] CPU: Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz (4 cores)
+21:54:36 [App     ] RAM: 15.56GB Physical Memory 7.81GB Virtual Memory
+21:54:36 [App     ] OS: Linux 4.15.0-96-generic (x86_64)
+21:54:36 [App     ] SSE & AVX compatible CPU & OS detected
+21:54:36 [App     ] Command line: scene_dense.mvs -w /home/qys/Documents/graduate_code/Code/3D_constructor_server/src/main/resources/static/api/models/878076/model/mvs
+21:54:37 [App     ] Scene loaded (1s344ms):
+	11 images (11 calibrated) with a total of 15.81 MPixels (1.44 MPixels/image)
+	1126845 points, 0 vertices, 0 faces
+21:54:46 [App     ] Delaunay tetrahedralization completed: 1126845 points -> 483589 vertices, 3037760 (+176) cells, 6075608 (+264) faces (8s28ms)
+21:55:01 [App     ] Delaunay tetrahedras weighting completed: 3037936 cells, 6075872 faces (15s503ms)
+21:55:08 [App     ] Delaunay tetrahedras graph-cut completed (374339 flow): 452314 vertices, 904828 faces (6s370ms)
+21:55:14 [App     ] Mesh reconstruction completed: 452368 vertices, 904686 faces (36s145ms)
+21:55:18 [App     ] Cleaned mesh: 452106 vertices, 903868 faces (4s336ms)
+21:55:21 [App     ] Cleaned mesh: 452112 vertices, 903885 faces (2s586ms)
+21:55:22 [App     ] Cleaned mesh: 452112 vertices, 903885 faces (1s471ms)
+21:55:23 [App     ] Scene saved (1s135ms):
+	11 images (11 calibrated)
+	0 points, 452112 vertices, 903885 faces
+21:55:24 [App     ] Mesh saved: 452112 vertices, 903885 faces (334ms)
+21:55:24 [App     ] MEMORYINFO: {
+21:55:24 [App     ] 	VmPeak:	 1639472 kB
+21:55:24 [App     ] 	VmSize:	 1093588 kB
+21:55:24 [App     ] } ENDINFO
